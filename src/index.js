@@ -82,4 +82,12 @@ const timeout = () => {
   nextBtn.click();
 };
 
-setInterval(timeout, 5000);
+let timer = setInterval(timeout, 5000);
+
+carousel.addEventListener('mouseenter', () => {
+  clearInterval(timer);
+});
+
+carousel.addEventListener('mouseleave', () => {
+  timer = setInterval(timeout, 5000);
+});
