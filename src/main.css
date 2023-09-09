@@ -1,3 +1,148 @@
 :root {
   color-scheme: light dark;
 }
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100svh;
+  display: grid;
+  place-content: center;
+}
+
+menu {
+  list-style-type: none;
+}
+
+img {
+  width: 100%;
+  display: block;
+  pointer-events: none;
+}
+
+button {
+  appearance: none;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  cursor: pointer;
+}
+
+svg {
+  pointer-events: none;
+  aspect-ratio: 1/1;
+}
+
+.carousel {
+  width: 360px;
+  display: grid;
+  grid-template-columns: min-content minmax(0, 1fr) min-content;
+}
+
+.slides {
+  border-radius: 1rem;
+  grid-column: 1/-1;
+  grid-row: 1/2;
+  display: grid;
+  grid-template-columns: 360px;
+  grid-auto-columns: 360px;
+  overflow: hidden;
+  scroll-behavior: smooth;
+  scroll-snap-type: x proximity;
+}
+
+.slide {
+  grid-row: 1/2;
+}
+
+.arrows-menu {
+  grid-column: 1/-1;
+  grid-row: 1/2;
+  display: contents;
+}
+
+.arrow-left {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  margin-left: 1rem;
+}
+
+.arrow-right {
+  grid-column: 3/4;
+  grid-row: 1/2;
+  margin-right: 1rem;
+}
+
+.arrow-left,
+.arrow-right {
+  align-self: center;
+  display: grid;
+  place-content: center;
+}
+
+.left-btn,
+.right-btn {
+  padding: 0.25rem;
+  font-size: 2rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: rgba(255, 255, 255, 0.5);
+  border: 4px solid currentColor;
+  border-radius: 50%;
+  transition: all 0.5s;
+}
+
+.left-btn:hover,
+.right-btn:hover {
+  scale: 1.2;
+  background-color: rgba(0, 0, 0, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+.nav-dots {
+  grid-column: 1/-1;
+  grid-row: 1/2;
+  align-self: end;
+  display: grid;
+  grid-auto-columns: auto;
+  place-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.dot {
+  grid-row: 1/2;
+  display: grid;
+  place-content: center;
+}
+
+.dot-btn {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 0.75rem;
+  height: 0.75rem;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  transition: all 0.25s;
+}
+
+.dot-btn:hover:not(.selected) {
+  scale: 1.5;
+}
+
+.dot-btn.selected {
+  scale: 2 1.5;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.dot-btn:hover {
+  background-color: rgba(0, 0, 0, 1);
+}
