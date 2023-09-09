@@ -22,6 +22,7 @@ const config = {
         test: /\.jpg$/,
         type: 'asset/resource',
       },
+      { test: /\.svg$/, type: 'asset/source' },
     ],
   },
 
