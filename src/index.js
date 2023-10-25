@@ -1,7 +1,7 @@
 import './main.css';
 import angleLeft from './assets/angle-left.svg';
 import angleRight from './assets/angle-right.svg';
-import * as Skins from './images';
+import Skins from './images';
 
 const champions = Object.keys(Skins);
 
